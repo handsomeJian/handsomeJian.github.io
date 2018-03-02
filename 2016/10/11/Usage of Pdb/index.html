@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Usage of Pdb | handsomeJian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Start Debugging
+Just use pdb yourfile.py to start debugging from the first line of your program.
+Or you can type the following code in your program:12import pdbpdb.set_trace() # set a breakpoint here">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Usage of Pdb">
+<meta property="og:url" content="http://handsomeJian.github.io/2016/10/11/Usage of Pdb/index.html">
+<meta property="og:site_name" content="handsomeJian">
+<meta property="og:description" content="Start Debugging
+Just use pdb yourfile.py to start debugging from the first line of your program.
+Or you can type the following code in your program:12import pdbpdb.set_trace() # set a breakpoint here">
+<meta property="og:updated_time" content="2016-10-12T01:36:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Usage of Pdb">
+<meta name="twitter:description" content="Start Debugging
+Just use pdb yourfile.py to start debugging from the first line of your program.
+Or you can type the following code in your program:12import pdbpdb.set_trace() # set a breakpoint here">
+  
+    <link rel="alternative" href="/atom.xml" title="handsomeJian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">handsomeJian</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="handsomeJian.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-Usage of Pdb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/11/Usage of Pdb/" class="article-date">
+  <time datetime="2016-10-10T16:00:00.000Z" itemprop="datePublished">2016-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Usage of Pdb
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Start-Debugging"><a href="#Start-Debugging" class="headerlink" title="Start Debugging"></a>Start Debugging</h3><ul>
+<li>Just use <code>pdb yourfile.py</code> to start debugging from the first line of your program.</li>
+<li>Or you can type the following code in your program:<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pdb</div><div class="line">pdb.set_trace() <span class="comment"># set a breakpoint here</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="h-elp"><a href="#h-elp" class="headerlink" title="h(elp)"></a><code>h(elp)</code></h3><ul>
+<li>Use <code>h</code> to print all the available command.</li>
+<li>Use <code>h [command]</code> like <code>help l</code> to print the usage of the command.</li>
+</ul>
+<h3 id="l-ist"><a href="#l-ist" class="headerlink" title="l(ist)"></a><code>l(ist)</code></h3><p>Show the code block that will run later.</p>
+<h3 id="‘b-reak-’"><a href="#‘b-reak-’" class="headerlink" title="‘b(reak)’"></a>‘b(reak)’</h3><ul>
+<li>Only use <code>b</code> to show all the breakpoints.</li>
+<li>Use <code>b [linenum]</code> like <code>b 233</code> to set a break point at the line.</li>
+<li>Use <code>b [fuctionname]</code> to set a break point at a function.</li>
+</ul>
+<h3 id="‘tbreak’"><a href="#‘tbreak’" class="headerlink" title="‘tbreak’"></a>‘tbreak’</h3><p>Use this to set a temporary breakpoint.</p>
+<h3 id="‘commands-bpnumber-’"><a href="#‘commands-bpnumber-’" class="headerlink" title="‘commands [bpnumber]’"></a>‘commands [bpnumber]’</h3><blockquote>
+<p>Specify a list of commands for breakpoint number bpnumber. The commands themselves appear on the following lines. Type a line containing just end to terminate the commands. An example:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(Pdb) commands <span class="number">1</span></div><div class="line">(com) p some_variable</div><div class="line">(com) end</div><div class="line">(Pdb)</div></pre></td></tr></table></figure></p>
+<p>To remove all commands from a breakpoint, type commands and follow it immediately with end; that is, give no commands. With no bpnumber argument, commands refers to the last breakpoint set.</p>
+</blockquote>
+<h3 id="cl-ear"><a href="#cl-ear" class="headerlink" title="cl(ear)"></a><code>cl(ear)</code></h3><ul>
+<li>Use <code>cl</code> to clear all the breakpoints.</li>
+<li>Use <code>cl [num]</code> clear one breakpoint which number is num.</li>
+</ul>
+<h3 id="disable-enable-num"><a href="#disable-enable-num" class="headerlink" title="disable/enable [num]"></a><code>disable/enable [num]</code></h3><p>Disable/Enalbe a certain breakpoint.</p>
+<h3 id="n-ext"><a href="#n-ext" class="headerlink" title="n(ext)"></a><code>n(ext)</code></h3><p>Make the program run to next line but won’t get into a function.</p>
+<h3 id="s-tep"><a href="#s-tep" class="headerlink" title="s(tep)"></a><code>s(tep)</code></h3><p>Like <code>next</code> but will get into a function.</p>
+<h3 id="c-ont-inue"><a href="#c-ont-inue" class="headerlink" title="c(ont(inue))"></a><code>c(ont(inue))</code></h3><p>Let program run to the next breakpoint.</p>
+<h3 id="j-ump-linenum"><a href="#j-ump-linenum" class="headerlink" title="j(ump) [linenum]"></a><code>j(ump) [linenum]</code></h3><p>Jump to the given line.</p>
+<h3 id="p-argname"><a href="#p-argname" class="headerlink" title="p [argname]"></a><code>p [argname]</code></h3><p>Print the argument.</p>
+<h3 id=""><a href="#" class="headerlink" title="!"></a><code>!</code></h3><p>Use <code>!</code> following with code can change the value of an object. For example:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">!a = <span class="number">0.01</span></div></pre></td></tr></table></figure></p>
+<h3 id="q-uit"><a href="#q-uit" class="headerlink" title="q(uit)"></a><code>q(uit)</code></h3><p>Quit pdb.</p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h3><ul>
+<li>Directly press enter to repeat the former command.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://handsomeJian.github.io/2016/10/11/Usage of Pdb/" data-id="cje9myte7001i4wvpkpm6pfdb" class="article-share-link">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/13/Bojack Horseman S1E4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bojack Horseman S1E4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/07/Bojack Horseman S1E3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Bojack Horseman S1E3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bojack-Horseman/">Bojack Horseman</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmake/">Cmake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/">Note</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rust/">Rust</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bojack-Horseman/" style="font-size: 20px;">Bojack Horseman</a> <a href="/tags/Cmake/" style="font-size: 10px;">Cmake</a> <a href="/tags/Note/" style="font-size: 17.5px;">Note</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Rust/" style="font-size: 12.5px;">Rust</a> <a href="/tags/书摘/" style="font-size: 12.5px;">书摘</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/28/Cmake/">Cmake</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/Bojack Horseman S1E12/">Bojack Horseman S1E12</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/10/Bojack Horseman S1E11/">Bojack Horseman S1E11</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/09/Bojack Horseman S1E10/">Bojack Horseman S1E10</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/08/Bojack Horseman S1E9/">Bojack Horseman S1E9</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=450 src="https://music.163.com/outchain/player?type=0&id=61431256&auto=0&height=430"></iframe>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 handsomeJian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Something about Rust | handsomeJian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OwnershipThere exists a ownership system in Rust, and it’s a little strange for a new leaner though it truly promises safety.The ownership system causes lots of problem that a programmer should take c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Something about Rust">
+<meta property="og:url" content="http://handsomeJian.github.io/2016/11/22/Something about Rust/index.html">
+<meta property="og:site_name" content="handsomeJian">
+<meta property="og:description" content="OwnershipThere exists a ownership system in Rust, and it’s a little strange for a new leaner though it truly promises safety.The ownership system causes lots of problem that a programmer should take c">
+<meta property="og:updated_time" content="2016-12-28T11:38:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Something about Rust">
+<meta name="twitter:description" content="OwnershipThere exists a ownership system in Rust, and it’s a little strange for a new leaner though it truly promises safety.The ownership system causes lots of problem that a programmer should take c">
+  
+    <link rel="alternative" href="/atom.xml" title="handsomeJian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">handsomeJian</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="handsomeJian.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-Something about Rust" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/22/Something about Rust/" class="article-date">
+  <time datetime="2016-11-21T16:00:00.000Z" itemprop="datePublished">2016-11-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Something about Rust
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Ownership"><a href="#Ownership" class="headerlink" title="Ownership"></a>Ownership</h1><p>There exists a <em>ownership system</em> in Rust, and it’s a little strange for a new leaner though it truly promises safety.<br>The ownership system causes lots of problem that a programmer should take care of. I only mention the stuffs but won’t explain them as the documents of Rust has explained well.</p>
+<ul>
+<li><h3 id="Copy-types"><a href="#Copy-types" class="headerlink" title="Copy types"></a>Copy types</h3>Take care of the non-primitive types such as vectors or functions. They don’t have Copy trait automatically like primitive types. So when we use a non-primitive type of data, it’s better to “<strong>borrow</strong>“.</li>
+</ul>
+<h1 id="Borrowing"><a href="#Borrowing" class="headerlink" title="Borrowing"></a>Borrowing</h1><p>We can write this in a function:</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">fn</span> <span class="title">foo</span></span>(v1: &amp;<span class="built_in">Vec</span>&lt;<span class="keyword">i32</span>&gt;, v2: &amp;<span class="built_in">Vec</span>&lt;<span class="keyword">i32</span>&gt;) -&gt; <span class="keyword">i32</span> &#123;</div><div class="line">    <span class="comment">// do stuff with v1 and v2</span></div><div class="line"></div><div class="line">    <span class="comment">// return the answer</span></div><div class="line">    <span class="number">42</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> v1 = <span class="built_in">vec!</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> v2 = <span class="built_in">vec!</span>[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> answer = foo(&amp;v1, &amp;v2);</div><div class="line"></div><div class="line"><span class="comment">// we can use v1 and v2 here!</span></div></pre></td></tr></table></figure>
+<p>And the <code>&amp;</code> is signal for borrowing as <code>&amp;T</code> types a ‘reference’, and rather than owning the resource, it borrows ownership.<br>Note that references are <strong>immutable</strong>.</p>
+<p>Fortunately we have <strong><code>&amp;mut references</code></strong>.<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> <span class="keyword">mut</span> x = <span class="number">5</span>;</div><div class="line">&#123;</div><div class="line">    <span class="keyword">let</span> y = &amp;<span class="keyword">mut</span> x;</div><div class="line">    *y += <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">println!</span>(<span class="string">"&#123;&#125;"</span>, x);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>You’ll need to use asterisks (*) to access the contents of a reference.</p>
+</blockquote>
+<p><strong>Here are the rules for borrowing in Rust:</strong><br>First, any borrow must last for a scope no greater than that of the owner.<br>Second, you may have one or the other of these two kinds of borrows, but not both at the same time:  </p>
+<ul>
+<li>one or more references (&amp;T) to a resource,</li>
+<li>exactly one mutable reference (&amp;mut T).</li>
+</ul>
+<h1 id="Lifetimes"><a href="#Lifetimes" class="headerlink" title="Lifetimes"></a>Lifetimes</h1><p>Rust also have a section of ownership system called “lifetimes”. It’s difficult for me to describe it clearly in my words, so I’ll put a link to <a href="https://doc.rust-lang.org/book/lifetimes.html" target="_blank" rel="external">the document of rust of this section</a>.<br>I have to say I still haven’t understand it yet……</p>
+<h1 id="Traits"><a href="#Traits" class="headerlink" title="Traits"></a>Traits</h1>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://handsomeJian.github.io/2016/11/22/Something about Rust/" data-id="cje9mytd1000s4wvp7m71qxvq" class="article-share-link">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust/">Rust</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/01/Bojack Horseman S1E8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bojack Horseman S1E8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/19/《秒速五厘米》/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">《秒速五厘米》</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bojack-Horseman/">Bojack Horseman</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmake/">Cmake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/">Note</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rust/">Rust</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bojack-Horseman/" style="font-size: 20px;">Bojack Horseman</a> <a href="/tags/Cmake/" style="font-size: 10px;">Cmake</a> <a href="/tags/Note/" style="font-size: 17.5px;">Note</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Rust/" style="font-size: 12.5px;">Rust</a> <a href="/tags/书摘/" style="font-size: 12.5px;">书摘</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/28/Cmake/">Cmake</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/Bojack Horseman S1E12/">Bojack Horseman S1E12</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/10/Bojack Horseman S1E11/">Bojack Horseman S1E11</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/09/Bojack Horseman S1E10/">Bojack Horseman S1E10</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/08/Bojack Horseman S1E9/">Bojack Horseman S1E9</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=450 src="https://music.163.com/outchain/player?type=0&id=61431256&auto=0&height=430"></iframe>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 handsomeJian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>

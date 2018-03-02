@@ -1,0 +1,385 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Code in Python | handsomeJian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="List
+Define a new listThere are many ways to define a new list.If you want to use it as a array which already have a length like you define a array in C++, you can do in this way:
+
+12&amp;gt;&amp;gt;&amp;gt; a =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Code in Python">
+<meta property="og:url" content="http://handsomeJian.github.io/2016/09/18/Code in Python/index.html">
+<meta property="og:site_name" content="handsomeJian">
+<meta property="og:description" content="List
+Define a new listThere are many ways to define a new list.If you want to use it as a array which already have a length like you define a array in C++, you can do in this way:
+
+12&amp;gt;&amp;gt;&amp;gt; a =">
+<meta property="og:updated_time" content="2016-11-09T14:03:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Code in Python">
+<meta name="twitter:description" content="List
+Define a new listThere are many ways to define a new list.If you want to use it as a array which already have a length like you define a array in C++, you can do in this way:
+
+12&amp;gt;&amp;gt;&amp;gt; a =">
+  
+    <link rel="alternative" href="/atom.xml" title="handsomeJian" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+<div id="container">
+  <div id="wrap">
+    <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">handsomeJian</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+          <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+          <input type="submit" value="" class="search-form-submit">
+          <input name=tn type=hidden value="bds">
+          <input name=cl type=hidden value="3">
+          <input name=ct type=hidden value="2097152">
+          <input type="hidden" name="si" value="handsomeJian.github.io">
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="outer">
+      <section id="main"><article id="post-Code in Python" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/18/Code in Python/" class="article-date">
+  <time datetime="2016-09-17T16:00:00.000Z" itemprop="datePublished">2016-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Code in Python
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
+<li><h3 id="Define-a-new-list"><a href="#Define-a-new-list" class="headerlink" title="Define a new list"></a>Define a new list</h3>There are many ways to define a new list.<br>If you want to use it as a array which already have a length like you define a array in C++, you can do in this way:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">0</span>] * n</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># n is the length of the array</span></div></pre></td></tr></table></figure>
+<p><strong>Warning</strong></p>
+<p>This have a very strange point like this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>lists = [[]] * <span class="number">3</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>lists</div><div class="line">[[], [], []]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>lists[<span class="number">0</span>].append(<span class="number">3</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>lists</div><div class="line">[[<span class="number">3</span>], [<span class="number">3</span>], [<span class="number">3</span>]]</div></pre></td></tr></table></figure>
+<p>This is because all the three element in list are <strong>pointed</strong> to a same small list. So when you change anyone of them, the others will change too. But if you all put <code>0</code> in a list is OK. When you do <code>a[3] = 5</code>, other elements in a are still <code>0</code>. You created a new object whose value is <code>5</code> and point <code>a[3]</code> to it so that’s fine.</p>
+<ul>
+<li><h3 id="List-Comprehension"><a href="#List-Comprehension" class="headerlink" title="List Comprehension"></a>List Comprehension</h3>It has many uses and rules. We can change a comprehension to a longer but simpler code to understand it. For example:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list([x <span class="keyword">for</span> x <span class="keyword">in</span> a <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>])</div><div class="line">[<span class="number">2</span>, <span class="number">4</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list([x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>) <span class="keyword">if</span> x &gt; <span class="number">8</span> <span class="keyword">or</span> x &lt; <span class="number">1</span>])</div><div class="line">[<span class="number">0</span>, <span class="number">9</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>] <span class="keyword">for</span> y <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">3</span>] <span class="keyword">if</span> x != y]</div><div class="line">[(<span class="number">1</span>, <span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">3</span>)]</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="list-append-x"><a href="#list-append-x" class="headerlink" title="list.append(x)"></a>list.append(x)</h3><p>This method can add a new element at the end of the list.</p>
+</li>
+<li><h3 id="list-extend-x"><a href="#list-extend-x" class="headerlink" title="list.extend(x)"></a>list.extend(x)</h3><p>In this method, x is a list. It can add x to the end of the list.</p>
+</li>
+<li><h3 id="list-remove-x"><a href="#list-remove-x" class="headerlink" title="list.remove(x)"></a>list.remove(x)</h3><p>Remove the first element whose value is x in the list.</p>
+</li>
+<li><h3 id="list-pop-x"><a href="#list-pop-x" class="headerlink" title="list.pop(x)"></a>list.pop(x)</h3></li>
+<li>If x is blank, then it return the last element of the list and delete it.</li>
+<li><p>Or x should be a number of place of the element you want to return and delete.</p>
+</li>
+<li><h3 id="Other-methods-of-list"><a href="#Other-methods-of-list" class="headerlink" title="Other methods of list"></a>Other methods of list</h3></li>
+<li><strong>list.remove(x)</strong>: remove the first item whose value is x.</li>
+<li><strong>list.clear()</strong>: remove all the items.</li>
+<li><strong>list.index(x)</strong>: return the index of the first item who has value as x.</li>
+<li><strong>list.count(x)</strong>: return the number of times x appears.</li>
+<li><strong>list.sort()</strong>: sort the list.</li>
+<li><strong>list.reverse()</strong>: reverse the list.</li>
+<li><strong>list.copy()</strong>: return a copy of the list.</li>
+</ul>
+<h2 id="Tuple"><a href="#Tuple" class="headerlink" title="Tuple"></a>Tuple</h2><ul>
+<li><h3 id="Define-a-new-tuple"><a href="#Define-a-new-tuple" class="headerlink" title="Define a new tuple"></a>Define a new tuple</h3>Use parentheses to define a new tuple(can also ellipsis). But if you want to define a tuple that only has one element, you need to type a comma after the element.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>t = <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>t = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>t = <span class="number">1</span>,</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>t = (<span class="number">1</span>,)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>t = () <span class="comment"># define an empty tuple(seems useless)</span></div></pre></td></tr></table></figure>
+<p>Personally speaking, I think if you don’t care about the safety of your data, tuples are useless. Well, I know this thought is naive.</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><blockquote>
+<p>A set is an unordered collection with no duplicate elements.</p>
+</blockquote>
+<ul>
+<li><h3 id="Define-a-new-set"><a href="#Define-a-new-set" class="headerlink" title="Define a new set"></a>Define a new set</h3><p>Use <code>{}</code> or <code>set()</code> to create a new set. If you want to create an empty set, use <code>set()</code>, because <code>{}</code> will create a new empty dictionary.</p>
+</li>
+<li><h3 id="Mathematical-operations"><a href="#Mathematical-operations" class="headerlink" title="Mathematical operations"></a>Mathematical operations</h3></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = set(<span class="string">'abracadabra'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = set(<span class="string">'alacazam'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a</div><div class="line">&#123;<span class="string">'a'</span>, <span class="string">'r'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a - b    <span class="comment"># letters in a but not in b</span></div><div class="line">&#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a | b    <span class="comment"># letters in either a or b</span></div><div class="line">&#123;<span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a &amp; b    <span class="comment"># letters in both a and b</span></div><div class="line">&#123;<span class="string">'a'</span>, <span class="string">'c'</span>&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a ^ b    <span class="comment"># letters in a or b but not both</span></div><div class="line">&#123;<span class="string">'r'</span>, <span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'m'</span>, <span class="string">'z'</span>, <span class="string">'l'</span>&#125;</div></pre></td></tr></table></figure>
+<h2 id="Deque"><a href="#Deque" class="headerlink" title="Deque"></a>Deque</h2><p>Deque can insert or delete an item from both ends and is faster than list. Before use a deque, you have to import it from collections.deque:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; from collections import deque</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="deque-appendleft-x"><a href="#deque-appendleft-x" class="headerlink" title="deque.appendleft(x)"></a>deque.appendleft(x)</h3><p>Add x to the front of the deque.</p>
+</li>
+<li><h3 id="deque-remove-x"><a href="#deque-remove-x" class="headerlink" title="deque.remove(x)"></a>deque.remove(x)</h3><p>Remove the first item whose value is x.</p>
+</li>
+<li><h3 id="deque-extendleft-deq"><a href="#deque-extendleft-deq" class="headerlink" title="deque.extendleft(deq)"></a>deque.extendleft(deq)</h3><p>This is a little strange because when add items in deq to deque, it will reverse the order.</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> deque</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1 = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d2 = deque([<span class="number">4</span>, <span class="number">5</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1.extendleft(d2)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d1</div><div class="line">deque([<span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="deque-remove-x-1"><a href="#deque-remove-x-1" class="headerlink" title="deque.remove(x)"></a>deque.remove(x)</h3>Using examples is easier to understand this method.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> collections <span class="keyword">import</span> deque</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d = deque([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">2</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d</div><div class="line">deque([<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d.rotate(<span class="number">-3</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>d</div><div class="line">deque([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>])</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="deque-popleft"><a href="#deque-popleft" class="headerlink" title="deque.popleft()"></a>deque.popleft()</h3>Return the first item of the list and delete it.</li>
+</ul>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><ul>
+<li><h3 id="round-f-i"><a href="#round-f-i" class="headerlink" title="round(f, i)"></a>round(f, i)</h3></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>round(<span class="number">3.14</span>, <span class="number">1</span>)</div><div class="line"><span class="number">3.1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>round(<span class="number">3.1415926</span>, <span class="number">3</span>)</div><div class="line"><span class="number">3.141</span></div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="pi"><a href="#pi" class="headerlink" title="pi"></a>pi</h3></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> math <span class="keyword">import</span> pi</div></pre></td></tr></table></figure>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul>
+<li><h3 id="string-strip-st"><a href="#string-strip-st" class="headerlink" title="string.strip(st)"></a>string.strip(st)</h3></li>
+<li>If st is blank, then it will delete blank character <strong>which is at the beginning or end of string</strong> including <code>\n</code> <code>\r</code> <code>\t</code> and blank.</li>
+<li>If st is a string, it will delete any character appears both in st and string(<strong>at the beginning and the end</strong>).</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>exp = <span class="string">' 1234   56123   '</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>exp.strip()</div><div class="line"><span class="string">'1234   56123'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>exp = <span class="string">'12345236123'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>exp.strip(<span class="string">'32'</span>)</div><div class="line"><span class="string">'1452361'</span></div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="string-format-x1-x2-x3…"><a href="#string-format-x1-x2-x3…" class="headerlink" title="string.format(x1, x2, x3…)"></a>string.format(x1, x2, x3…)</h3>This is an useful method especially when output. It can be used like this:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"Hello, &#123;0&#125;. Today is &#123;1&#125;"</span>.format(<span class="string">"Jack"</span>, <span class="string">"Sunday"</span>)</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="string-split-sep-None-maxsplit-1"><a href="#string-split-sep-None-maxsplit-1" class="headerlink" title="string.split(sep = None, maxsplit = -1)"></a>string.split(sep = None, maxsplit = -1)</h3></li>
+</ul>
+<blockquote>
+<p>Return a list of the words in the string, using sep as the delimiter string. If maxsplit is given, at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements).</p>
+</blockquote>
+<h2 id="Else"><a href="#Else" class="headerlink" title="Else"></a>Else</h2><ul>
+<li><h3 id="map-f-x"><a href="#map-f-x" class="headerlink" title="map(f, x)"></a>map(f, x)</h3>It can iterate every element in x, put them in f, and return a map object. You have to use <code>list( )</code> or other function to change it. Just like this:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a)</span>:</span></div><div class="line">...	    <span class="keyword">return</span> a + <span class="number">1</span></div><div class="line">...</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>map(f, x)</div><div class="line">&lt;map object at .......&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>list(map(f, x))</div><div class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure>
+<ul>
+<li><h3 id="sorted-iterator"><a href="#sorted-iterator" class="headerlink" title="sorted(iterator)"></a>sorted(iterator)</h3><p>In list, you can use <code>list.sort()</code> . You can do the same thing using <code>sorted(list)</code> .</p>
+</li>
+<li><h3 id="slice-start-stop-step"><a href="#slice-start-stop-step" class="headerlink" title="slice(start, stop, step)"></a>slice(start, stop, step)</h3><p>This is a build-in class which have three arguments: <code>start</code>,  <code>stop</code> and <code>step</code>. <code>start</code> and <code>step</code> default to <code>None</code>. You can get this kind of class when you use <code>a[start:stop:step]</code> (<code>a</code> is a list or something iterable) or you define <code>__setitem__()</code> or <code>__getitem__()</code> in your own class</p>
+</li>
+</ul>
+<p><em>Written by handsomeJian</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://handsomeJian.github.io/2016/09/18/Code in Python/" data-id="cje9mytd8000w4wvp0rs7flg4" class="article-share-link">Share</a>
+      
+
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Note/">Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/21/Bojack Horseman S1E1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Bojack Horseman S1E1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/09/17/Something about Python/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Something about Python</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+      
+      <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bojack-Horseman/">Bojack Horseman</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cmake/">Cmake</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Note/">Note</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Rust/">Rust</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/书摘/">书摘</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bojack-Horseman/" style="font-size: 20px;">Bojack Horseman</a> <a href="/tags/Cmake/" style="font-size: 10px;">Cmake</a> <a href="/tags/Note/" style="font-size: 17.5px;">Note</a> <a href="/tags/Python/" style="font-size: 15px;">Python</a> <a href="/tags/Rust/" style="font-size: 12.5px;">Rust</a> <a href="/tags/书摘/" style="font-size: 12.5px;">书摘</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/28/Cmake/">Cmake</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/15/Bojack Horseman S1E12/">Bojack Horseman S1E12</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/10/Bojack Horseman S1E11/">Bojack Horseman S1E11</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/09/Bojack Horseman S1E10/">Bojack Horseman S1E10</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/08/Bojack Horseman S1E9/">Bojack Horseman S1E9</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=450 src="https://music.163.com/outchain/player?type=0&id=61431256&auto=0&height=430"></iframe>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 handsomeJian<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      .
+      Theme by <a href="https://github.com/xiangming/landscape-plus" target="_blank">Landscape-plus</a>
+    </div>
+  </div>
+</footer>
+  </div>
+  <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+  <!-- totop start -->
+<div id="totop">
+<a title="totop"><img src="/img/scrollup.png"/></a>
+</div>
+
+<!-- totop end -->
+
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+                processEscapes: true
+                    
+}
+  
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                  
+}
+    
+        });
+</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                            all[i].SourceElement().parentNode.className += ' has-jax';
+                                    
+            }
+                
+        });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<script src="/js/script.js"></script>
+
+</div>
+</body>
+</html>
